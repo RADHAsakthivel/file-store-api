@@ -8,12 +8,5 @@ export interface IFile extends Document {
     size: number;
     type: DocumentTypeEnum;
     extension: FileExtensionTypeEnum;
-    createdAt: Date;
-    updatedAt: Date;
-    isDeleted: boolean;
-    deletedAt?: Date;
-    createdBy: string;
-    updatedBy: string;
-    deletedBy?: string;
     parentId?: mongoose.Types.ObjectId;
 }

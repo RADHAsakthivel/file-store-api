@@ -2,8 +2,8 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./db";
-import routes from "./routes";
-import router2 from "./router2";
+import {deleteRouter,getRouter,postRouter} from "./router"
+
 try {
   dotenv.config();
   const app = express();
@@ -11,7 +11,7 @@ try {
 
   app.use(cors());
   app.use(express.json());
-  app.use("/api", router2);
+  app.use("/api", [deleteRouter,getRouter,postRouter]);
   
   connectDB()
     .then(() => {

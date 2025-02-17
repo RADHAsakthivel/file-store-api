@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import { IFolder } from "../Interface/IFolder interface";
+import  {IFolder}  from "../Interface/IFolder.interface";
 
 const FolderSchema = new Schema<IFolder>(
     {
@@ -7,15 +7,9 @@ const FolderSchema = new Schema<IFolder>(
         description: { type: String },
         children: [{ type: Schema.Types.ObjectId, ref: "Folder" }],
         files: [{ type: Schema.Types.ObjectId, ref: "File" }],
-        isExpanded: { type: Boolean, default: false },
-        isSelectedFlag: { type: Boolean, default: false },
-        isDisabled: { type: Boolean, default: false },
-        isLeaf: { type: Boolean, default: false },
-        isRoot: { type: Boolean, default: false },
-        level: { type: Number, required: true },
         parent: { type: Schema.Types.ObjectId, ref: "Folder", default: null },
     },
     { timestamps: true }
 );
-
+FolderSchema.index({ parent: 1 });
 export default mongoose.model<IFolder>("Folder", FolderSchema);

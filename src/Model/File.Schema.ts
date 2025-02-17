@@ -9,14 +9,7 @@ const FileSchema = new Schema<IFile>(
         description: { type: String },
         size: { type: Number, required: true },
         type: { type: String, enum: Object.values(DocumentTypeEnum), required: true },
-        extension: { type: String, enum: Object.values(FileExtensionTypeEnum), required: true },
-        createdAt: { type: Date, default: Date.now },
-        updatedAt: { type: Date, default: Date.now },
-        isDeleted: { type: Boolean, default: false },
-        deletedAt: { type: Date },
-        createdBy: { type: String},
-        updatedBy: { type: String},
-        deletedBy: { type: String },
+        extension: { type: String, required: true },
         parentId: { type: Schema.Types.ObjectId, ref: "Folder" }
     },
     { timestamps: true }

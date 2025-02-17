@@ -4,5 +4,5 @@ export enum DocumentTypeEnum {
     PDF = "PDF",
     TEXT = "TEXT",
     OTHER = "OTHER",
-    UNKNOWN = "UNKOWN"
+    UNKNOWN = "UNKNOWN"
 }

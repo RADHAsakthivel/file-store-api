@@ -5,13 +5,5 @@ export interface IFolder extends Document {
     description?: string;
     children: mongoose.Types.ObjectId[];
     files: mongoose.Types.ObjectId[];
-    isExpanded: boolean;
-    isSelectedFlag: boolean;
-    isDisabled: boolean;
-    isLeaf: boolean;
-    isRoot: boolean;
-    level: number;
     parent?: mongoose.Types.ObjectId;
-    createdAt: Date;
-    updatedAt: Date;
 }
